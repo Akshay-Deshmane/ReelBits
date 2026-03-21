@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 
-
 async function userRegisterController(req, res) {
 
     const { fullName, email, password } = req.body;
@@ -95,9 +94,18 @@ async function loginUser(req, res) {
 
 
 
+async function logoutUser(req, res) {
+
+    res.clearCookie("token");
+    
+    return res.status(200).json({
+        message : "User Logged Out Successfully"
+    })
+}
 
 
 
 
 
-module.exports = {userRegisterController, loginUser};
+
+module.exports = {userRegisterController, loginUser, logoutUser};
