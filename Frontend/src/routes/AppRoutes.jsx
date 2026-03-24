@@ -1,15 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import ChooseRegister from '../pages/auth/ChooseRegister';
 
 
 const AppRoutes = () => {
   return (
     <Router>
         <Routes>
-            <Route path="/user/register" element = {<h1> User Register</h1>}/>
-            <Route path="/user/login" element = {<h1> User Login</h1>}/>
-            <Route path="/food-partner/register" element = {<h1> Food Partner</h1>}/>
-            <Route path="/food-partner/login" element = {<h1> Food partner Login</h1>}/>
+                <Route path="/register" element={<ChooseRegister/>} />
         </Routes>
     </Router>
   )
