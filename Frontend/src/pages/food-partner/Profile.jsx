@@ -51,8 +51,10 @@ const Profile = () => {
             <hr className="profile-sep" />
 
             <section className="profile-grid" aria-label="Videos">
+                {/* {videos.map((v) => (
+                    <div key={v.id} className="profile-grid-item"> */}
                 {videos.map((v) => (
-                    <div key={v.id} className="profile-grid-item">
+                    <div key={v._id || v.id} className="profile-grid-item">    
                         {/* Placeholder tile; replace with <video> or <img> as needed */}
 
 
