@@ -54,16 +54,14 @@ const CreateFood = () => {
 
         formData.append('name', name);
         formData.append('description', description);
-        formData.append("mama", videoFile);
+        formData.append("video", videoFile);
 
         const response = await axios.post("http://localhost:3000/api/food", formData, {
             withCredentials: true,
         })
 
         console.log(response.data);
-        navigate("/"); // Redirect to home or another page after successful creation
-        // Optionally reset
-        // setName(''); setDescription(''); setVideoFile(null);
+        navigate("/");
     };
 
     const isDisabled = useMemo(() => !name.trim() || !videoFile, [ name, videoFile ]);
@@ -105,7 +103,7 @@ const CreateFood = () => {
                                 <div className="file-dropzone-text">
                                     <strong>Tap to upload</strong> or drag and drop
                                 </div>
-                                <div className="file-hint">MP4, WebM, MOV • Up to ~100MB</div>
+                                <div className="file-hint">MP4, WebM, MOV • Up to ~10MB</div>
                             </div>
                         </div>
 
